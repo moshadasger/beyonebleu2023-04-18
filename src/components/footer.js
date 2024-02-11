@@ -9,8 +9,8 @@ export default () => {
   const { t } = useTranslation()
 
 
-const Footer = () => {
-  const { t } = useTranslation();
+//const Footer = () => {
+//  const { t } = useTranslation();
 
   useEffect(() => {
     // Initialize Histats tracking script
