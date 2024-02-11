@@ -1,11 +1,40 @@
-import React from "react"
+//import React from "react"
 import Link from "./app_link"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { useTranslation } from "react-i18next"
+import React, { useEffect } from "react";
+
 
 export default () => {
   const { t } = useTranslation()
 
+
+const Footer = () => {
+  const { t } = useTranslation();
+
+  useEffect(() => {
+    // Initialize Histats tracking script
+    window._Hasync = window._Hasync || [];
+    window._Hasync.push(['Histats.start', '1,4843947,4,3,170,30,00011111']);
+    window._Hasync.push(['Histats.fasi', '1']);
+    window._Hasync.push(['Histats.track_hits', '']);
+    window._Hasync.push(['Histats.framed_page', '']);
+
+    const hs = document.createElement('script');
+    hs.type = 'text/javascript';
+    hs.async = true;
+    hs.src = '//s10.histats.com/js15_as.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(hs);
+
+    // Cleanup function to remove script if the component unmounts
+    return () => {
+      if (document.body.contains(hs)) {
+        document.body.removeChild(hs);
+      }
+    };
+  }, []);
+
+  
   return (
     <footer className="bg-white relative">
       <div className="container">
@@ -77,6 +106,10 @@ export default () => {
           © {new Date().getFullYear()} @beyondbleu.com. All rights reserved. Last update 2023-04-18
         </div>
       </div>
+
+    <noscript><a href="/" target="_blank"><img  src="//sstatic1.histats.com/0.gif?4843947&101" alt="" border="0"></a></noscript>
+
+                  
     </footer>
   )
 }
