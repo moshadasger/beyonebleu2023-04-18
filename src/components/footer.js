@@ -106,9 +106,6 @@ const Footer = () => {
           © {new Date().getFullYear()} @beyondbleu.com. All rights reserved. Last update 2023-04-18
         </div>
       </div>
-
-    <noscript><a href="/" target="_blank"><img  src="//sstatic1.histats.com/0.gif?4843947&101" alt="" border="0"></a></noscript>
-
                   
     </footer>
   )
